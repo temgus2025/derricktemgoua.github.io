@@ -1,0 +1,262 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+header {
+    background-color: #1e1e2f;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+nav li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+section {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+section h2 {
+    border-bottom: 2px solid #1e1e2f;
+    padding-bottom: 0.5rem;
+}
+
+ul li {
+    margin: 0.5rem 0;
+}
+
+.projet {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+footer {
+    background-color: #1e1e2f;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+.photo-profil {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    margin: 1rem auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.cv-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1e1e2f;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.cv-button:hover {
+    background-color: #3b3b5c;
+}
+.banniere {
+    background-image: url('banniere.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    position: relative;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banniere .overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* filtre foncé */
+    padding: 2rem;
+    width: 100%;
+}
+
+.banniere h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.banniere p {
+    font-size: 1.2rem;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ffd700;
+}
+/* ======== Style responsive (mobile / tablette) ======== */
+
+@media (max-width: 768px) {
+    .banniere {
+        height: auto;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .banniere h1 {
+        font-size: 1.8rem;
+    }
+
+    .banniere p {
+        font-size: 1rem;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+    }
+
+    header nav ul li {
+        margin: 0;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    img.photo-profil {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        display: block;
+        margin: 0 auto 20px auto;
+    }
+
+    .projet {
+        margin-bottom: 30px;
+    }
+
+   .cv-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #0077cc;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cv-button:hover {
+    background-color: #005fa3;
+}
+
+/* Version mobile/tablette */
+@media (max-width: 768px) {
+    .cv-button {
+        width: 100%;
+        text-align: center;
+        padding: 14px;
+        font-size: 1rem;
+    }
+}
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+    padding: 0;
+    gap: 20px;
+}
+/* Animation pour les projets */
+.projet {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Quand visible à l’écran */
+.projet.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Animation bannière au chargement */
+.banniere .overlay {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: apparitionBanniere 1.2s ease-out forwards;
+}
+
+/* Animation clé */
+@keyframes apparitionBanniere {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

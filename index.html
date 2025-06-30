@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Administrateur Sécurité</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const projets = document.querySelectorAll('.projet');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // animation une seule fois
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    projets.forEach(projet => {
+        observer.observe(projet);
+    });
+});
+</script>
+<body>
+       <header class="banniere">
+    <div class="overlay">
+        <h1>Derrick Temgoua</h1>
+        <p>Administrateur d'Infrastructures Sécurisées</p>
+        <nav>
+            <ul>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <section id="apropos">
+        <h2>À propos</h2>
+        <img src="images/photo.jpg" alt="Photo de Derrick Temgoua" class="photo-profil">
+        <p>Professionnel passionné de cybersécurité et d’administration système et réseau, je conçois, sécurise et maintiens des infrastructures pour garantir la disponibilité, l'intégrité et la confidentialité des systèmes informatiques.</p>
+    </section>
+
+    <section id="competences">
+        <h2>Compétences</h2>
+        <ul>
+            <li>🛡️ Sécurité des systèmes et réseaux</li>
+            <li>🖥️ Virtualisation (VMware, Hyper-V, Proxmox)</li>
+            <li>📡 Administration Linux / Windows Server / MacOS</li>
+            <li>📚 Supervision (Centreon, Zabbix, Nagios)</li>
+            <li>🔐 Pare-feux & VPN (pfSense, Stormshield, Fortinet, Cisco)</li>
+            <li>☁️ Cloud (Azure, AWS, OVHcloud)</li>
+        </ul>
+    </section>
+
+    <section id="projets">
+        <h2>Projets</h2>
+        <div class="projet">
+            <h3>Mise en place d’un VPN IPsec site-à-site</h3>
+            <p>Configuration d’un tunnel sécurisé entre deux sites distants via pfSense pour une entreprise multisite.</p>
+            <h3>Mise en place d’un centre d'administration Intune</h3>
+            <p>Configuration d’un serveur et un parc Informatique pc pour administration à distance</p>
+        </div>
+        <div class="projet">
+            <h3>Infrastructure virtualisée pour PME</h3>
+            <p>Déploiement d’un cluster Proxmox, stockage Ceph, avec haute disponibilité pour les services critiques.</p>
+            <h3>Infrastructure Matériel</h3>
+            <p>Migratiopn des imprimantes Nationale chez Clariane.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email : temgouaderrick9@gmail.com</p>
+        <p>Téléphone : +33 7 58 95 27 13</p>
+        <p>LinkedIn : <a href="https://linkedin.com/in/derricktemgoua" target="_blank">https://www.linkedin.com/in/derrick-temgoua-766459250/</a></p>
+        <a href="CV_Derrick_Temgoua.pdf" download class="cv-button">📄 Télécharger mon CV</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Derrick Temgoua - Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
